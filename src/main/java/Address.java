@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Address {
     private String street;
     private String aptNr;
@@ -93,6 +95,32 @@ public class Address {
             return a;
         }
 
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Address address = (Address) o;
+        return zipCode == address.zipCode &&
+                Objects.equals(street, address.street) &&
+                Objects.equals(aptNr, address.aptNr) &&
+                Objects.equals(city, address.city) &&
+                Objects.equals(state, address.state);
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+
+        result = prime * result + (street == null ? 0 : street.hashCode());
+        result = prime * result + (aptNr == null ? 0 : aptNr.hashCode());
+        result = prime * result + (city == null ? 0 : city.hashCode());
+
+        return result;
     }
 }
+
