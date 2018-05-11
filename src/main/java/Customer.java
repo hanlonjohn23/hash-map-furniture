@@ -89,9 +89,9 @@ public class Customer {
         if (this.getClass() != o.getClass())
             return false;
         Customer customer = (Customer) o;
-        return id == customer.id &&
-                Objects.equals(name, customer.name) &&
-                Objects.equals(address, customer.address);
+        return this.id == customer.id &&
+                Objects.equals(this.name, customer.name) &&
+                Objects.equals(this.address, customer.address);
     }
 
     @Override

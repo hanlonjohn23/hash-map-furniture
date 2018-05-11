@@ -104,11 +104,11 @@ public class Address {
         if (o == null || getClass() != o.getClass())
             return false;
         Address address = (Address) o;
-        return zipCode == address.zipCode &&
-                Objects.equals(street, address.street) &&
-                Objects.equals(aptNr, address.aptNr) &&
-                Objects.equals(city, address.city) &&
-                Objects.equals(state, address.state);
+        return this.zipCode == address.zipCode &&
+                Objects.equals(this.street, address.street) &&
+                Objects.equals(this.aptNr, address.aptNr) &&
+                Objects.equals(this.city, address.city) &&
+                Objects.equals(this.state, address.state);
     }
 
     @Override
