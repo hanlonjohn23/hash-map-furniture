@@ -101,7 +101,9 @@ public class Address {
     public boolean equals(Object o) {
         if (this == o)
             return true;
-        if (o == null || getClass() != o.getClass())
+        if (o == null)
+            return false;
+        if (getClass() != o.getClass())
             return false;
         Address address = (Address) o;
         return this.zipCode == address.zipCode &&
