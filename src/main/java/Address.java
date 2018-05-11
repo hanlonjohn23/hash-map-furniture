@@ -116,11 +116,30 @@ public class Address {
         final int prime = 31;
         int result = 1;
 
+        result = prime * result + zipCode;
         result = prime * result + (street == null ? 0 : street.hashCode());
         result = prime * result + (aptNr == null ? 0 : aptNr.hashCode());
         result = prime * result + (city == null ? 0 : city.hashCode());
+        result = prime * result + (state == null ? 0 : state.hashCode());
 
         return result;
     }
+
+    @Override
+    public String toString() {
+        if(aptNr != null) {
+            return street + ", " +
+                    aptNr + ", " +
+                    city + ", " +
+                    state + " " +
+                    zipCode;
+
+        }
+        return street + ", " +
+                city + ", " +
+                state + " " +
+                zipCode;
+    }
+
 }
 

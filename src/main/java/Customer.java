@@ -91,7 +91,6 @@ public class Customer {
         Customer customer = (Customer) o;
         return id == customer.id &&
                 Objects.equals(name, customer.name) &&
-                Objects.equals(customerSince, customer.customerSince) &&
                 Objects.equals(address, customer.address);
     }
 
@@ -99,20 +98,18 @@ public class Customer {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        Long idAsObject = id;
+
+        result = prime * result + (int) id;
         result = prime * result + (name == null ? 0 : name.hashCode());
-        result = prime * result + (idAsObject == null ? 0 : idAsObject.hashCode());
         result = prime * result + (address == null ? 0 : address.hashCode());
         return result;
     }
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", customerSince=" + customerSince +
-                ", address=" + address +
-                '}';
+        return name + '\n' +
+                address + '\n' +
+                "Customer #: "+ id + '\n' +
+                "Customer Since: " + customerSince;
     }
 }
