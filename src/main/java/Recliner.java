@@ -40,6 +40,12 @@ public class Recliner implements Furniture {
     }
 
     @Override
+    public String toString() {
+        return  name + ' ' +
+                "Model #: " + modelNr + ' ';
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
@@ -48,5 +54,7 @@ public class Recliner implements Furniture {
         result = prime * result + (name == null ? 0 : name.hashCode());
 
         return result;
+
+
     }
 }
